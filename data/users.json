@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1787144345509",
+    "name": "Lamu Rishitha",
+    "email": "lamu_2022bciv139@nitsri.ac.in",
+    "password": "$2b$10$MkO4yv61zHyPewzBoOPOROWHJK9FpCAze63AjU9mI.jE2vTV/itLm",
+    "createdAt": "2026-08-19T12:59:05.509Z",
+    "fitness": {
+      "workouts": [],
+      "nutrition": [],
+      "water": [],
+      "weight": [],
+      "habits": []
+    }
+  }
+]

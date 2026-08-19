@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FitTrack | Login</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="../css/login-page.css">
+</head>
+
+
+<body>
+
+    <!-- ==========================================
+         BACKGROUND
+    =========================================== -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <header class="login-navbar">
+
+        <a href="../index.html" class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-dumbbell"></i>
+            </div>
+
+            <span>
+                Fit<span>Track</span>
+            </span>
+
+        </a>
+
+
+        <a href="../index.html" class="back-home">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN LOGIN AREA
+    =========================================== -->
+
+    <main class="login-page">
+
+        <!-- LEFT SIDE -->
+
+        <section class="login-info">
+
+            <div class="info-badge">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                WELCOME BACK
+
+            </div>
+
+
+            <h1>
+
+                Your progress
+                <span>is waiting.</span>
+
+            </h1>
+
+
+            <p>
+
+                Log in to continue tracking your workouts,
+                nutrition, water intake and fitness progress
+                — all in one place.
+
+            </p>
+
+
+            <!-- Benefits -->
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Track your progress
+                        </strong>
+
+                        <small>
+                            See how far you've come.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Manage your workouts
+                        </strong>
+
+                        <small>
+                            Keep every workout organized.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Build better habits
+                        </strong>
+
+                        <small>
+                            Stay consistent every day.
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RIGHT SIDE LOGIN CARD -->
+
+        <section class="login-card">
+
+            <!-- Card Header -->
+
+            <div class="card-header">
+
+                <div class="login-icon">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                </div>
+
+
+                <h2>
+                    Welcome back
+                </h2>
+
+
+                <p>
+                    Login to your FitTrack account
+                </p>
+
+            </div>
+
+
+
+            <!-- Login Form -->
+
+            <form id="loginForm">
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="loginEmail">
+                        Email Address
+                    </label>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="loginPassword">
+                            Password
+                        </label>
+
+                        <a href="#">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="fa-regular fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Remember Me -->
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                        >
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Login Button -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+
+                    <span>
+                        Login to FitTrack
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+
+                <!-- Message -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                ></div>
+
+
+            </form>
+
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+
+            <!-- Register -->
+
+            <div class="register-text">
+
+                Don't have an account?
+
+                <a href="../html/register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+
+
+            <!-- Security -->
+
+            <div class="secure-login">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+                    Your account information is securely protected.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <span>
+            © 2026 FitTrack
+        </span>
+
+        <span>
+            Your fitness. Your progress. Your journey.
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        /* ==========================================
+           SHOW / HIDE PASSWORD
+        =========================================== */
+
+        const passwordInput =
+            document.getElementById("loginPassword");
+
+        const togglePassword =
+            document.getElementById("togglePassword");
+
+
+        togglePassword.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    passwordInput.type === "password"
+                ) {
+
+                    passwordInput.type = "text";
+
+                    togglePassword.innerHTML =
+                        '<i class="fa-regular fa-eye-slash"></i>';
+
+                } else {
+
+                    passwordInput.type = "password";
+
+                    togglePassword.innerHTML =
+                        '<i class="fa-regular fa-eye"></i>';
+
+                }
+
+            }
+        );
+
+
+
+        /* ==========================================
+           LOGIN FORM
+        =========================================== */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+
+        loginForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                const email =
+                    document
+                    .getElementById("loginEmail")
+                    .value
+                    .trim();
+
+
+                const password =
+                    document
+                    .getElementById("loginPassword")
+                    .value;
+
+
+                const rememberMe =
+                    document
+                    .getElementById("rememberMe")
+                    .checked;
+
+
+
+                /* Loading state */
+
+                loginButton.disabled = true;
+
+                loginButton.innerHTML = `
+                    <span>Logging in...</span>
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                `;
+
+
+                loginMessage.textContent = "";
+
+
+
+                try {
+
+                    const response =
+                        await fetch(
+                            "http://localhost:5000/login",
+                            {
+                                method: "POST",
+
+                                headers: {
+                                    "Content-Type":
+                                        "application/json"
+                                },
+
+                                body: JSON.stringify({
+                                    email: email,
+                                    password: password
+                                })
+                            }
+                        );
+
+
+                    const data =
+                        await response.json();
+
+
+
+                    /* ==================================
+                       SUCCESS
+                    ================================== */
+
+                    if (data.success) {
+
+
+                        /* Save token */
+
+                        if (data.token) {
+
+                            localStorage.setItem(
+                                "token",
+                                data.token
+                            );
+
+                        }
+
+
+                        /* Login status */
+
+                        localStorage.setItem(
+                            "isLoggedIn",
+                            "true"
+                        );
+
+
+                        /* Username */
+
+                        if (data.username) {
+
+                            localStorage.setItem(
+                                "username",
+                                data.username
+                            );
+
+                        }
+
+
+                        /* Remember me */
+
+                        if (rememberMe) {
+
+                            localStorage.setItem(
+                                "rememberMe",
+                                "true"
+                            );
+
+                        } else {
+
+                            localStorage.removeItem(
+                                "rememberMe"
+                            );
+
+                        }
+
+
+                        loginMessage.className =
+                            "login-message success";
+
+                        loginMessage.innerHTML = `
+                            <i class="fa-solid fa-circle-check"></i>
+                            Login successful! Redirecting...
+                        `;
+
+
+                        setTimeout(
+                            function () {
+
+                                window.location.href =
+                                    "page.html";
+
+                            },
+                            800
+                        );
+
+
+                    }
+
+
+                    /* ==================================
+                       LOGIN FAILED
+                    ================================== */
+
+                    else {
+
+                        loginMessage.className =
+                            "login-message error";
+
+                        loginMessage.innerHTML = `
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            ${data.message ||
+                            "Invalid email or password."}
+                        `;
+
+
+                        resetLoginButton();
+
+                    }
+
+                }
+
+
+                /* ==================================
+                   SERVER ERROR
+                ================================== */
+
+                catch (error) {
+
+                    console.error(error);
+
+
+                    loginMessage.className =
+                        "login-message error";
+
+                    loginMessage.innerHTML = `
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        Unable to connect to the server.
+                    `;
+
+
+                    resetLoginButton();
+
+                }
+
+            }
+        );
+
+
+
+        /* ==========================================
+           RESET LOGIN BUTTON
+        =========================================== */
+
+        function resetLoginButton() {
+
+            loginButton.disabled = false;
+
+            loginButton.innerHTML = `
+                <span>Login to FitTrack</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            `;
+
+        }
+
+        if (data.success) {
+
+    localStorage.setItem("username", data.username);
+    localStorage.setItem("isLoggedIn", "true");
+
+    window.location.href = "./page.html";
+
+}
+
+    </script>
+
+    <script src="/server.js"></script>
+
+</body>
+
+</html>

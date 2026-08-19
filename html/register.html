@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | FitTrack</title>
+
+    <link rel="stylesheet" href="../css/register.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+<body>
+
+    <div class="signup-page">
+
+        <div class="signup-box">
+
+            <h1>FitTrack</h1>
+            <p class="subtitle">START YOUR FITNESS JOURNEY</p>
+
+           <form id="registerForm">
+
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname"
+                           placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password"
+                           placeholder="Create a password" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password"
+                           placeholder="Confirm your password" required>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the Terms & Conditions
+                    </label>
+                </div>
+
+                <button type="submit">CREATE ACCOUNT</button>
+                <div id="registerMessage"></div>
+
+            </form>
+
+            <p class="login-text">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+</div>
+
+<script>
+
+const registerForm =
+    document.getElementById("registerForm");
+
+registerForm.addEventListener(
+    "submit",
+    async function(e) {
+
+        e.preventDefault();
+
+
+        const name =
+            document
+                .getElementById("fullname")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value;
+
+
+        const confirmPassword =
+            document
+                .getElementById("confirm-password")
+                .value;
+
+
+        const message =
+            document.getElementById(
+                "registerMessage"
+            );
+
+
+        // ================= PASSWORD CHECK =================
+
+        if (password !== confirmPassword) {
+
+            message.innerHTML =
+                '<p class="error-message">' +
+                'Passwords do not match.' +
+                '</p>';
+
+            return;
+
+        }
+
+
+        if (password.length < 6) {
+
+            message.innerHTML =
+                '<p class="error-message">' +
+                'Password must be at least 6 characters.' +
+                '</p>';
+
+            return;
+
+        }
+
+
+        // ================= LOADING =================
+
+        message.innerHTML =
+            '<p class="loading">' +
+            'Creating your account...' +
+            '</p>';
+
+
+        try {
+
+            const response =
+                await fetch(
+                    "/api/auth/register",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        credentials: "include",
+
+                        body: JSON.stringify({
+
+                            name: name,
+
+                            email: email,
+
+                            password: password
+
+                        })
+                    }
+                );
+
+
+            const data =
+                await response.json();
+
+
+            // ================= SUCCESS =================
+
+            if (data.success) {
+
+                message.innerHTML =
+                    '<p class="success-message">' +
+                    'Account created successfully! ' +
+                    'Redirecting...' +
+                    '</p>';
+
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "page.html";
+
+                }, 800);
+
+            }
+
+
+            // ================= ERROR =================
+
+            else {
+
+                message.innerHTML =
+                    `<p class="error-message">
+                        ${data.message}
+                    </p>`;
+
+            }
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Registration error:",
+                error
+            );
+
+
+            message.innerHTML =
+                '<p class="error-message">' +
+                'Unable to connect to FitTrack server. ' +
+                'Make sure server.js is running.' +
+                '</p>';
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
